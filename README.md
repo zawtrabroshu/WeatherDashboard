@@ -1,16 +1,204 @@
-# React + Vite
+# WeatherDashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Опис проєкту
 
-Currently, two official plugins are available:
+**WeatherDashboard** - це вебзастосунок, створений для перегляду погодної інформації та даних про криптовалюти. Проєкт розроблений з використанням React та Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Застосунок дозволяє отримувати актуальні погодні дані для різних міст, переглядати інформацію про криптовалюти, зберігати улюблені міста та переглядати історію пошуку.
 
-## React Compiler
+## Основні можливості
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Перегляд погодної інформації для обраного міста.
+- Пошук міст.
+- Перегляд інформації про криптовалюти та їхні основні показники.
+- Перегляд графіка зміни ціни криптовалюти.
+- Додавання міст до списку обраного.
+- Перегляд історії пошуку.
+- Видалення міст з обраного.
+- Очищення історії пошуку.
+- Обробка помилок під час отримання даних з API.
+- Адаптивний та зручний інтерфейс.
 
-## Expanding the ESLint configuration
+## Технології
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+У проєкті використовуються:
+
+- **React** - створення інтерфейсу та компонентів.
+- **Vite** - інструмент для запуску та збірки проєкту.
+- **JavaScript** - логіка застосунку.
+- **CSS** - стилізація інтерфейсу.
+- **Fetch API** - отримання даних із зовнішніх API.
+- **Vitest** - тестування функцій та компонентів.
+- **React Testing Library** - перевірка роботи компонентів.
+- **Git та GitHub** - контроль версій та зберігання проєкту.
+
+## Структура проєкту
+
+```text
+WeatherDashboard/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   └── Sidebar.jsx
+│   ├── context/
+│   │   └── AppContext.jsx
+│   ├── pages/
+│   │   ├── CryptoPage.jsx
+│   │   ├── FavoritesPage.jsx
+│   │   └── HistoryPage.jsx
+│   ├── services/
+│   │   ├── crypto.js
+│   │   └── weather.js
+│   ├── tests/
+│   │   ├── App.test.jsx
+│   │   ├── AppContext.test.jsx
+│   │   ├── CryptoPage.test.jsx
+│   │   ├── FavoritesPage.test.jsx
+│   │   ├── HistoryPage.test.jsx
+│   │   ├── weather.test.js
+│   │   └── setup.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Як працює застосунок
+
+### Погода
+
+Для отримання погодних даних використовуються функції, розташовані у файлі `src/services/weather.js`.
+
+Після пошуку міста застосунок звертається до API, отримує відповідь у форматі JSON та використовує отримані дані для відображення інформації на сторінці.
+
+Якщо запит не вдається виконати, користувач отримує повідомлення про помилку.
+
+### Криптовалюти
+
+Робота з криптовалютами реалізована у файлі `src/services/crypto.js`.
+
+Застосунок отримує дані про криптовалютний ринок, відображає основні показники криптовалют та дозволяє обрати конкретну валюту для перегляду історії зміни її ціни.
+
+Для відображення історичних даних використовується графік.
+
+### Обране та історія пошуку
+
+Для збереження обраних міст та історії пошуку використовується React Context.
+
+Стан застосунку керується через `AppContext.jsx`. Дані зберігаються у `localStorage`, тому вони залишаються доступними після перезавантаження сторінки.
+
+Користувач може додавати та видаляти міста зі списку обраного, переглядати попередні пошуки та очищувати історію.
+
+## Тестування
+
+Для перевірки роботи застосунку використовуються **Vitest** та **React Testing Library**.
+
+Тестами перевіряються:
+
+- робота основного застосунку;
+- функції керування станом;
+- додавання та видалення улюблених міст;
+- робота історії пошуку;
+- отримання погодних даних;
+- відображення криптовалют;
+- завантаження історії цін;
+- зміна обраної криптовалюти;
+- обробка помилок API;
+- оновлення даних.
+
+Під час тестування API-функції замінюються mock-функціями, що дозволяє перевіряти компоненти без залежності від реальних зовнішніх запитів.
+
+## Запуск проєкту
+
+Для запуску проєкту необхідно встановити Node.js.
+
+1. Клонувати репозиторій:
+
+```bash
+git clone https://github.com/zawtrabroshu/WeatherDashboard.git
+```
+
+2. Перейти до папки проєкту:
+
+```bash
+cd WeatherDashboard
+```
+
+3. Встановити залежності:
+
+```bash
+npm install
+```
+
+4. Запустити застосунок:
+
+```bash
+npm run dev
+```
+
+Після запуску Vite надасть локальне посилання, за яким можна відкрити застосунок у браузері.
+
+## Запуск тестів
+
+Для запуску тестів використовується команда:
+
+```bash
+npm test
+```
+
+Для запуску тестів у режимі одноразового виконання:
+
+```bash
+npx vitest run
+```
+
+## Збірка проєкту
+
+Для створення production-збірки:
+
+```bash
+npm run build
+```
+
+Результат збірки буде знаходитися у папці `dist`.
+
+## Скріншоти застосунку
+
+### Головна сторінка
+
+<!-- Додати скріншот головної сторінки -->
+
+### Сторінка криптовалют
+
+<!-- Додати скріншот Crypto Dashboard -->
+
+### Обране
+
+<!-- Додати скріншот сторінки Favorites -->
+
+### Історія пошуку
+
+<!-- Додати скріншот сторінки History -->
+
+## GitHub
+
+Репозиторій проєкту:
+
+[WeatherDashboard на GitHub](https://github.com/zawtrabroshu/WeatherDashboard)
+
+---
+
+**Навчальний проєкт**, створений у рамках виконання практичних та лабораторних робіт з веброзробки.
+
+**Скріншоти**
+<img width="1901" height="927" alt="main-page" src="https://github.com/user-attachments/assets/fb38e12d-5d42-49ea-9cad-28e09c89b3c9" />
+<img width="1902" height="924" alt="Market-overview" src="https://github.com/user-attachments/assets/cea50613-2ef7-4311-bc55-e8c86d3e9a9b" />
+<img width="1904" height="921" alt="Crypto" src="https://github.com/user-attachments/assets/78c36831-9187-4a92-b074-f423a42e529a" />
+<img width="1914" height="915" alt="History" src="https://github.com/user-attachments/assets/119be622-b888-4880-835e-543e26211947" />
+<img width="1913" height="910" alt="Favorites" src="https://github.com/user-attachments/assets/d95177dd-d3ea-43ff-b802-f027788e814e" />
+
