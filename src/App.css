@@ -1,0 +1,833 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0b1120;
+  color: #f1f5f9;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 245px;
+  min-height: 100vh;
+  background: #111827;
+  border-right: 1px solid #202b3e;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 42px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  background: #2563eb;
+  color: white;
+}
+
+.brand-accent {
+  color: #60a5fa;
+}
+
+.sidebar-label {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 0 14px 12px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-item:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.nav-item.active {
+  background: #1d4ed8;
+  color: white;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #263246;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+  background: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-info strong {
+  font-size: 13px;
+}
+
+.profile-info span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Main */
+
+.main-content {
+  width: 100%;
+  max-width: 1500px;
+  padding: 35px 45px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.greeting {
+  color: #94a3b8;
+  margin: 0 0 7px;
+  font-size: 14px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #151e2e;
+  border: 1px solid #273449;
+  border-radius: 12px;
+  padding: 12px 15px;
+  width: 280px;
+  color: #64748b;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-shortcut {
+  font-size: 11px;
+  white-space: nowrap;
+  color: #64748b;
+}
+
+.menu-button {
+  display: none;
+  background: #151e2e;
+  border: 1px solid #273449;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Sections */
+
+.weather-section,
+.forecast-section {
+  margin-bottom: 32px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+}
+
+.favorite-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #334155;
+  background: #151e2e;
+  color: #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+/* Weather hero */
+
+.weather-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 265px;
+  background: linear-gradient(115deg, #1d4ed8, #2563eb 55%, #3b82f6);
+  border-radius: 22px;
+  padding: 30px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-hero-left {
+  position: relative;
+  z-index: 2;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #dbeafe;
+  font-size: 14px;
+}
+
+.temperature {
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 24px 0 10px;
+  letter-spacing: -5px;
+}
+
+.temperature span {
+  font-size: 55px;
+  vertical-align: top;
+}
+
+.weather-hero h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.feels-like {
+  color: #bfdbfe;
+  font-size: 14px;
+  margin: 7px 0;
+}
+
+.temperature-range {
+  display: flex;
+  gap: 15px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #dbeafe;
+}
+
+.hero-weather-icon {
+  position: relative;
+  z-index: 2;
+  margin-right: 65px;
+  color: #fef3c7;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+}
+
+.hero-decoration {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  right: 70px;
+  top: -90px;
+}
+
+.hero-decoration::before {
+  content: "";
+  position: absolute;
+  inset: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+/* Stats */
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: #111827;
+  border: 1px solid #202b3e;
+  border-radius: 15px;
+}
+
+.stat-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.humidity {
+  background: #172554;
+  color: #60a5fa;
+}
+
+.wind {
+  background: #064e3b;
+  color: #34d399;
+}
+
+.visibility {
+  background: #78350f;
+  color: #fbbf24;
+}
+
+.pressure {
+  background: #4c1d95;
+  color: #c4b5fd;
+}
+
+.stat-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.stat-card strong {
+  font-size: 17px;
+}
+
+/* Hourly */
+
+.hourly-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.hour-card {
+  background: #111827;
+  border: 1px solid #202b3e;
+  border-radius: 15px;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #cbd5e1;
+}
+
+.hour-card svg {
+  color: #fbbf24;
+}
+
+.hour-card strong {
+  font-size: 18px;
+}
+
+.hour-time {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.hour-active {
+  border-color: #2563eb;
+  background: #172554;
+}
+
+/* Daily */
+
+.daily-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.daily-card {
+  display: grid;
+  grid-template-columns: 1fr 50px 90px;
+  align-items: center;
+  background: #111827;
+  border: 1px solid #202b3e;
+  border-radius: 12px;
+  padding: 12px 18px;
+}
+
+.daily-card > span {
+  font-size: 14px;
+}
+
+.daily-card svg {
+  color: #fbbf24;
+}
+
+.daily-temperatures {
+  display: flex;
+  justify-content: flex-end;
+  gap: 13px;
+}
+
+.daily-temperatures span {
+  color: #64748b;
+}
+
+.footer {
+  text-align: center;
+  color: #475569;
+  font-size: 12px;
+  padding: 25px 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-content {
+    padding: 28px;
+  }
+
+  .weather-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .topbar h1 {
+    font-size: 23px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .search-box {
+    width: 100%;
+    order: 3;
+  }
+
+  .weather-hero {
+    padding: 25px;
+    min-height: 230px;
+  }
+
+  .temperature {
+    font-size: 65px;
+  }
+
+  .hero-weather-icon {
+    margin-right: 0;
+  }
+
+  .hero-weather-icon svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .weather-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hourly-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-weather-icon {
+    position: absolute;
+    right: 15px;
+    top: 35px;
+    opacity: 0.6;
+  }
+
+  .hourly-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.search-submit {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.search-submit:hover {
+  background: #1d4ed8;
+}
+
+.search-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.favorited {
+  color: #fbbf24;
+  border-color: #fbbf24;
+}
+
+.error-message {
+  background: #451a1a;
+  border: 1px solid #7f1d1d;
+  color: #fca5a5;
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-bottom: 20px;
+}
+
+.loading-weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 200px;
+  font-size: 16px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Crypto Dashboard */
+
+.crypto-refresh {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.crypto-refresh:hover {
+  background: #1d4ed8;
+}
+
+.crypto-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.crypto-overview {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 25px;
+  margin-bottom: 30px;
+  background: linear-gradient(120deg, #172554, #1e3a8a);
+  border: 1px solid #1d4ed8;
+  border-radius: 17px;
+}
+
+.crypto-overview-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  color: white;
+  border-radius: 14px;
+}
+
+.crypto-overview h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+.crypto-overview p {
+  margin: 0;
+  color: #bfdbfe;
+  font-size: 13px;
+}
+
+.crypto-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #111827;
+  border: 1px solid #202b3e;
+  border-radius: 15px;
+}
+
+.crypto-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.crypto-table th {
+  padding: 18px 16px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #263246;
+  white-space: nowrap;
+}
+
+.crypto-table td {
+  padding: 17px 16px;
+  border-bottom: 1px solid #202b3e;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.crypto-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.crypto-table tbody tr:hover {
+  background: #1a2537;
+}
+
+.crypto-rank {
+  color: #64748b;
+}
+
+.crypto-asset {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.crypto-coin-icon {
+  width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1e3a8a;
+  color: #bfdbfe;
+  font-weight: 700;
+}
+
+.crypto-asset div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.crypto-asset strong {
+  font-size: 13px;
+  color: #f1f5f9;
+}
+
+.crypto-asset span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.crypto-price {
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.crypto-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.crypto-change.positive {
+  color: #34d399;
+}
+
+.crypto-change.negative {
+  color: #f87171;
+}
+
+.crypto-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 220px;
+  color: #94a3b8;
+}
+
+.crypto-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #451a1a;
+  border: 1px solid #7f1d1d;
+  border-radius: 10px;
+  color: #fca5a5;
+}
+/* Crypto price chart */
+
+.crypto-chart {
+  width: 100%;
+  min-height: 340px;
+  padding: 20px 15px;
+  background: #111827;
+  border: 1px solid #202b3e;
+  border-radius: 15px;
+}
+
+.crypto-select {
+  background: #151e2e;
+  border: 1px solid #334155;
+  color: #f1f5f9;
+  border-radius: 9px;
+  padding: 10px 13px;
+  outline: none;
+  cursor: pointer;
+  max-width: 220px;
+}
+
+.crypto-select option {
+  background: #111827;
+  color: white;
+}
+
+.chart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px 18px;
+  background: #111827;
+  border: 1px solid #202b3e;
+  border-radius: 12px;
+}
+
+.chart-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.chart-summary > div span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.chart-summary > div strong {
+  font-size: 23px;
+  color: #f1f5f9;
+}
+
+@media (max-width: 600px) {
+  .section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .crypto-select {
+    max-width: 100%;
+  }
+
+  .crypto-chart {
+    padding: 10px 5px;
+  }
+}
