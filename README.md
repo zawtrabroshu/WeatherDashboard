@@ -171,19 +171,22 @@ npm run build
 
 ### Головна сторінка
 
-<!-- Додати скріншот головної сторінки -->
+<img width="1901" height="927" alt="main-page" src="https://github.com/user-attachments/assets/fb38e12d-5d42-49ea-9cad-28e09c89b3c9" />
 
 ### Сторінка криптовалют
 
-<!-- Додати скріншот Crypto Dashboard -->
+<img width="1904" height="921" alt="Crypto" src="https://github.com/user-attachments/assets/78c36831-9187-4a92-b074-f423a42e529a" />
+<img width="1902" height="924" alt="Market-overview" src="https://github.com/user-attachments/assets/cea50613-2ef7-4311-bc55-e8c86d3e9a9b" />
 
 ### Обране
 
-<!-- Додати скріншот сторінки Favorites -->
+<img width="1913" height="910" alt="Favorites" src="https://github.com/user-attachments/assets/d3c88044-4ca5-440a-9b2c-cd4c37381848" />
+
 
 ### Історія пошуку
 
-<!-- Додати скріншот сторінки History -->
+<img width="1914" height="915" alt="History" src="https://github.com/user-attachments/assets/9c5b1996-978e-4bfd-a9d1-eddb35687788" />
+
 
 ## GitHub
 
@@ -194,11 +197,3 @@ npm run build
 ---
 
 **Навчальний проєкт**, створений у рамках виконання практичних та лабораторних робіт з веброзробки.
-
-**Скріншоти**
-<img width="1901" height="927" alt="main-page" src="https://github.com/user-attachments/assets/fb38e12d-5d42-49ea-9cad-28e09c89b3c9" />
-<img width="1902" height="924" alt="Market-overview" src="https://github.com/user-attachments/assets/cea50613-2ef7-4311-bc55-e8c86d3e9a9b" />
-<img width="1904" height="921" alt="Crypto" src="https://github.com/user-attachments/assets/78c36831-9187-4a92-b074-f423a42e529a" />
-<img width="1914" height="915" alt="History" src="https://github.com/user-attachments/assets/119be622-b888-4880-835e-543e26211947" />
-<img width="1913" height="910" alt="Favorites" src="https://github.com/user-attachments/assets/d95177dd-d3ea-43ff-b802-f027788e814e" />
-
